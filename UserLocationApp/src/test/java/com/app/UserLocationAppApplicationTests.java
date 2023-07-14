@@ -34,7 +34,11 @@ class UserLocationAppApplicationTests {
 	
 	@MockBean
 	private EndUserRepository endUserRepository;
-	
+
+	/*
+	 * Test case for save method which is supposed to
+	 * return exception
+	 */
 	@Test
 	public void saveUserDetailsWithExceptionTest() {
 		
@@ -52,6 +56,10 @@ class UserLocationAppApplicationTests {
 				});
 	}
 	
+	/*
+	 * Test case for save method which is not supposed to
+	 * return exception
+	 */
 	@Test
 	public void saveUserDetailsTest() throws EndUserException {
 		
@@ -66,6 +74,10 @@ class UserLocationAppApplicationTests {
 		assertEquals(endUser, endUserService.registerEndUser(endUser));
 	}
 	
+	/*
+	 * Test case for get All users method which is supposed to
+	 * return empty list as exception
+	 */
 	@Test
 	public void getAllUserDetailsExceptionTest() {
 		
@@ -76,6 +88,10 @@ class UserLocationAppApplicationTests {
 				});
 	}
 	
+	/*
+	 * Test case for getAllusers method which is supposed to
+	 * return empty list
+	 */
 	@Test
 	public void getAllUserDetailsTest() throws EndUserException {
 		
@@ -91,6 +107,10 @@ class UserLocationAppApplicationTests {
 		assertEquals(1, endUserService.getAllUsers().size());
 	}
 	
+	/*
+	 * Test case for get User by id method which is supposed to
+	 * return exception
+	 */
 	@Test
 	public void getUserByIdExceptionTest() {
 		
@@ -102,6 +122,10 @@ class UserLocationAppApplicationTests {
 				});
 	}
 	
+	/*
+	 * Test case for get User by id method which is not supposed to
+	 * return exception
+	 */
 	@Test
 	public void getUserByIdTest() throws EndUserException {
 		
@@ -118,6 +142,12 @@ class UserLocationAppApplicationTests {
 		
 	}
 	
+	/*
+	 * Test case for delete method to verify
+	 * how many itmes will be deleted
+	 * if it is implemented
+	 * 
+	 */
 	@Test
 	public void deleteUserTest() throws EndUserException {
 		
